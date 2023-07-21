@@ -1,0 +1,11 @@
+server:
+  port: 9000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: dept
+          uri: http://localhost:8081/
+          predicates:
+            - Path:

@@ -6,14 +6,13 @@ import Sujith.DepartmentService.Repository.DepartmentRepository;
 import Sujith.DepartmentService.Service.DepartmentService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 @AllArgsConstructor
 public class DepartmentServiceImplementation implements DepartmentService
 {
     private DepartmentRepository departmentRepository;
-
-
     @Override
     public DepartmentDto saveDepartment(DepartmentDto departmentDto) {
 

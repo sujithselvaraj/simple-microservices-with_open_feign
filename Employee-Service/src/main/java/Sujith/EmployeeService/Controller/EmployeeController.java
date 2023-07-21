@@ -10,12 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("api/employees")
 @AllArgsConstructor
 public class EmployeeController
 {
     private EmployeeService employeeService;
-
     @PostMapping
     public ResponseEntity<EmployeeDto> saveEmployee(@RequestBody EmployeeDto employeeDto)
     {
@@ -24,7 +22,7 @@ public class EmployeeController
     }
 
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<APIResponseDto> getEmployeeById(@PathVariable("id") Long employeeId)
     {
         APIResponseDto apiResponseDto=employeeService.getEmployeeById(employeeId);
